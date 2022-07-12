@@ -400,19 +400,25 @@ void Player::Stats() const {
 // assigns the creature as die = true
 void Player::Kill(const list<string>& sentence) {
 	Creature* target = (Creature*)parent->Find(*next(sentence.begin()),Type::CREATURE);
-	if (!target->IsAlive() && target->die!=true) {
-		target->Die();
-		target->die = true;
+	if (!target) {
+		cout << "There in not " << *next(sentence.begin()) << endl;
 	}
-
+	else {
+		if (!target->IsAlive() && target->die != true) {
+			target->Die();
+			target->die = true;
+		}
+	}
 }
 // reduce the number of lives by one
 void Player::Die() 
 {
 	
 	Creature::Die();
-	if(lifes>=0)
-	lifes= lifes - 1;
+	if (lifes > 0) {
+		lifes = lifes - 1;
+		life = 250;
+	}	
 }
 // Read an object Item of type text
 bool Player::Read(const list<string>& sentence) 

@@ -31,7 +31,11 @@ World::World():state(true)
 	Exit* openwindow = new Exit("window", "", "window", behindhouse, kitchen, false);
 
 	Creature* minitroll = new Creature("minitroll","a tiny troll.",kitchen,100,3,4,5,NULL,NULL);
-
+	Room* dungeon = new Room("Dungeon","Zork hideou.t",NULL);
+	Item* sword = new Item("sword","sword very powerful.",dungeon,40,35,0,ItemType::WEAPON);
+	Item* oldarmor = new Item("armor", "silver armor.", dungeon, 0, 0, 30, ItemType::ARMOR);
+	Creature* Zork = new Creature("Zork","Zork the destroyer.",dungeon,250,30,30,33,NULL,NULL);
+	Exit* ladderstodungeon = new Exit("down", "ladders to dongeon","up",kitchen, dungeon,false);
 
 	
 }

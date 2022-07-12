@@ -291,7 +291,7 @@ void Creature::MakeAttack()
 int Creature::ReceiveAttack(int damage)
 {
 	int prot = (armor) ? armor->GetValue()+defence : defence;
-	int received = damage - prot;
+	int received = (damage - prot)>0? damage - prot:0;
 
 	life -= received;
 

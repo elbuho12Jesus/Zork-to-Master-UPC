@@ -11,11 +11,7 @@ Entity::Entity(string name,string description, Type type, Entity* parent)
 }
 
 Entity::~Entity()
-{
-	for (list<Entity*>::const_iterator it = contains.begin(); it != contains.cend(); ++it)
-	{
-		delete* it;
-	}
+{	
 	contains.clear();
 }
 
