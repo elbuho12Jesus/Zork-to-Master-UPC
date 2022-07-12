@@ -22,3 +22,5 @@
 
 ## Link gameplay: [ZORK][Link]
 [Link]:https://youtu.be/s05lgtm3x2Q
+
+> Author Jesus Adrian.
